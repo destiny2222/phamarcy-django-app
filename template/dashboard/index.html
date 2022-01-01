@@ -1,0 +1,243 @@
+{%  extends 'dashboard/base.html' %}
+{%  load static %}
+{%  block body  %}
+
+{%  include 'dashboard/header.html'  %}
+
+		<!-- start page container -->
+		<div class="page-container">
+		     {%  include 'dashboard/sidebar.html' %}
+			 <!-- start page content -->
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-bar">
+						<div class="page-title-breadcrumb">
+							<div class=" pull-left">
+								<div class="page-title">Professor Profile</div>
+							</div>
+							<ol class="breadcrumb page-breadcrumb pull-right">
+								<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+										href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								<li><a class="parent-item" href="#">Professors</a>&nbsp;<i class="fa fa-angle-right"></i>
+								</li>
+								<li class="active">Professor Profile</li>
+							</ol>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<!-- BEGIN PROFILE SIDEBAR -->
+							<div class="profile-sidebar">
+								<div class="card">
+									<div class="card-body no-padding height-9">
+										<div class="row">
+											<div class="profile-userpic">
+												<img src="{{  user.photo.url  }}" class="img-responsive" alt="">
+											</div>
+										</div>
+										<div class="profile-usertitle">
+											<div class="profile-usertitle-name"> {{  user.fullname }} </div>
+											<div class="profile-usertitle-job"> {{  user.username }} </div>
+										</div>
+										<!-- <ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Followers</b> <a class="pull-right">1,200</a>
+											</li>
+											<li class="list-group-item">
+												<b>Following</b> <a class="pull-right">750</a>
+											</li>
+											<li class="list-group-item">
+												<b>Friends</b> <a class="pull-right">11,172</a>
+											</li>
+										</ul> -->
+										<!-- END SIDEBAR USER TITLE -->
+										<!-- SIDEBAR BUTTONS -->
+										<div class="profile-userbuttons">
+											<button type="button"
+												class="mdl-button mdl-js-button mdl-button--raised
+												 mdl-js-ripple-effect m-b-10 btn-circle btn-primary">Call</button>
+											<button type="button"
+												class="mdl-button mdl-js-button mdl-button--raised 
+												mdl-js-ripple-effect m-b-10 btn-circle btn-pink">What'sapp</button>
+										</div>
+										<!-- END SIDEBAR BUTTONS -->
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-head">
+										<header>About Me</header>
+									</div>
+									<div class="card-body no-padding height-9">
+										<div class="profile-desc">
+											{{  user.about }}
+										</div>
+										<ul class="list-group list-group-unbordered">
+											<li class="list-group-item">
+												<b>Gender </b>
+												<div class="profile-desc-item pull-right">{{  user.gender  }}</div>
+											</li>
+											<li class="list-group-item">
+												<b> Level</b>
+												<div class="profile-desc-item pull-right">{{  user.level }}</div>
+											</li>
+											<!-- <li class="list-group-item">
+												<b>Degree </b>
+												<div class="profile-desc-item pull-right">M.Com.</div>
+											</li> -->
+											<li class="list-group-item">
+												<b>Designation</b>
+												<div class="profile-desc-item pull-right">{{  user.username }}</div>
+											</li>
+										</ul>
+										<!-- <div class="row list-separated profile-stat">
+											<div class="col-md-4 col-sm-4 col-6">
+												<div class="uppercase profile-stat-title"> 37 </div>
+												<div class="uppercase profile-stat-text"> Projects </div>
+											</div>
+											<div class="col-md-4 col-sm-4 col-6">
+												<div class="uppercase profile-stat-title"> 51 </div>
+												<div class="uppercase profile-stat-text"> Tasks </div>
+											</div>
+											<div class="col-md-4 col-sm-4 col-6">
+												<div class="uppercase profile-stat-title"> 61 </div>
+												<div class="uppercase profile-stat-text"> Uploads </div>
+											</div>
+										</div> -->
+									</div>
+								</div>
+								<!-- <div class="card">
+									<div class="card-head">
+										<header>Address</header>
+									</div>
+									<div class="card-body no-padding height-9">
+										<div class="row text-center m-t-10">
+											<div class="col-md-12">
+												<p>456, Pragri flat, varacha road, Surat
+													<br> Gujarat, India.</p>
+											</div>
+										</div>
+									</div>
+								</div> -->
+								
+							</div>
+							<!-- END BEGIN PROFILE SIDEBAR -->
+							<!-- BEGIN PROFILE CONTENT -->
+							<div class="profile-content">
+								<div class="row">
+									<div class="card">
+										<div class="card-topline-aqua">
+											<header></header>
+										</div>
+										<div class="white-box">
+											<!-- Nav tabs -->
+											<div class="p-rl-20">
+												<ul class="nav customtab nav-tabs" role="tablist">
+													<li class="nav-item"><a href="#tab1" class="nav-link active"
+															data-bs-toggle="tab">About Me</a></li>
+													<li class="nav-item"><a href="#tab2" class="nav-link"
+															data-bs-toggle="tab">Activity</a></li>
+												</ul>
+											</div>
+											<!-- Tab panes -->
+											<div class="tab-content">
+												<div class="tab-pane active fontawesome-demo" id="tab1">
+													<div id="biography">
+														<div class="row">
+															<div class="col-md-4 col-6 b-r"> <strong>Full Name</strong>
+																<br>
+																<p class="text-muted">{{  user.fullname }} </p>
+															</div>
+															<div class="col-md-4 col-6 b-r"> <strong>Mobile</strong>
+																<br>
+																<p class="text-muted">{{  user.number  }}</p>
+															</div>
+															<div class="col-md-4 col-6 b-r"> <strong>Email</strong>
+																<br>
+																<p class="text-muted"><a href="" class="__cf_email__" data-cfemail="">
+																	{{  user.email }}	
+																</a></p>
+															</div>
+															<!-- <div class="col-md-3 col-6"> <strong>Location</strong>
+																<br>
+																<p class="text-muted">India</p>
+															</div> -->
+														</div>
+														<hr>
+														<p class="m-t-30">{{  user.description }}</p>
+														<br>
+														
+													</div>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- END PROFILE CONTENT -->
+						</div>
+					</div>
+
+					<div class="row">
+						<!-- Activity feed start -->
+					<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+						<div class="card-box">
+							<div class="card-head">
+								<header>Activity Feed</header>
+								<h4 style="padding-left: 20px;">
+									click on each user to view then profile page to know when is then  reading  hours 
+								</h4>
+								<!-- <button id="feedMenu" class="mdl-button mdl-js-button mdl-button--icon pull-right"
+									data-upgraded=",MaterialButton">
+									<i class="material-icons">more_vert</i>
+								</button>
+								<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+									data-mdl-for="feedMenu">
+									<li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
+									</li>
+									<li class="mdl-menu__item"><i class="material-icons">print</i>Another action
+									</li>
+									<li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
+										here</li>
+								</ul> -->
+							</div>
+							<div class="card-body ">
+								<ul class="feedBody">
+									{% for  i in tar  %}
+									<li class="active-feed">
+										<div class="feed-user-img">
+											<img src="{{  i.photo.url  }}" class="img-radius "
+												alt="User-Profile-Image">
+										</div>
+										<h6>
+											<span class="feedLblStyle lblFileStyle"><a href="{%  url 'index:other_user' i.id  %}">
+												View user
+											</a></span>  {{  i.fullname  }}
+											<!-- <small class="text-muted"><a href="#"></a></small> -->
+										</h6>
+										<p class="m-b-15 m-t-15">
+											{{  i.about  }}
+										</p>
+									</li>
+									{%  endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- Activity feed end -->
+					</div>
+				</div>
+				<!-- end page content -->
+				
+					
+			</div>
+			<!-- end page container -->
+
+			
+		</div>
+		<!-- end page container -->
+
+
+
+{%  endblock %}

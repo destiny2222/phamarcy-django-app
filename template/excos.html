@@ -1,0 +1,85 @@
+{%  extends 'base.html' %}
+{% load static %}
+<title>{% block title %} Excos | {% endblock %}</title>
+{% block content  %}
+
+
+{% include 'header.html' %}
+    <!--=================================
+    Inner Header -->
+    <section class="inner-header bg-holder bg-overlay-black-90" style="background-image: url('http://mymtn.com.ng/oops');">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+            <h1 class="breadcrumb-title mb-0 text-white">Excos</h1>
+          </div>
+          <div class="col-md-6">
+            <ol class="breadcrumb d-flex justify-content-center justify-content-md-end ml-auto">
+              <li class="breadcrumb-item"><a class="text-white" href="{% url 'index:home' %}"><i class="fas fa-home mr-1"></i>Home</a></li>
+              <li class="breadcrumb-item active"><span>Shop</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Inner Header -->
+
+    <!--=================================
+    Product -->
+    <section class="space-ptb">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-xl-4 order-2 order-md-1 mt-5 mt-md-0">
+            <div class="shop-sidebar">
+                <h3 class="mb-3">Know Your </h3>
+                <ul>
+                   <li style="font-size:14px; font-weight:900;">Pans Excos</li>
+                   <li style="font-size:14px; font-weight:900;">Members of The Supreme Pans Congress</li>
+                   <li style="font-size:14px; font-weight:900;">Staffs, Lectures and Management</li>
+                </ul>
+                <div class="btn-excos btn-primary mt-3 mb-3">
+                  <a class="text-white" href="https://wa.me/09061841668">Click here</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-7  order-1 order-md-1">
+            <!-- <h6 class="mb-4 mt-4 mb-4">Excos </h6> -->
+            <div class="row">
+              {% for exco in ecoxs %}
+              <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                <div class="product">
+                  <div class="product-image">
+                    <img class="img-fluid mx-auto" style="width: 350px; height:auto;" src="{{  exco.image.url  }}" alt="">
+                    <div class="product-overlay">
+                      <div class="add-to-cart">
+                        <!-- <a href="">Add to cart</a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-description">
+                    <div class="product-title ">
+                      <a href="#">{{  exco.name  }}</a>
+                    </div>
+                    <div class="product-title">
+                      <p>{{  exco.position  }}</p>
+                    </div>
+                    <div class="product-rating">
+                      <h3>{{  exco.number }}</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor  %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Product -->
+
+
+    {% include 'footer.html' %}
+
+    {% endblock %}

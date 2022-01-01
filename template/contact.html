@@ -1,0 +1,89 @@
+{%  extends 'base.html' %}
+{% load static %}
+<title>{% block title %} About | {% endblock %}</title>
+{% block content  %}
+
+
+{% include 'header.html' %}
+    <!--=================================
+    Inner Header -->
+    <section class="inner-header bg-holder bg-overlay-black-90" style="background-image: url('http://mymtn.com.ng/oops');">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+            <h1 class="breadcrumb-title mb-0 text-white">Contact Us</h1>
+          </div>
+          <div class="col-md-6">
+            <ol class="breadcrumb d-flex justify-content-center justify-content-md-end ml-auto">
+              <li class="breadcrumb-item"><a href="{% url 'index:home'  %}"><i class="fas fa-home mr-1"></i>Home</a></li>
+              <li class="breadcrumb-item active"><span>Contact Us</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Inner Header -->
+    
+    <!--=================================
+    Contact Us -->
+    <section class="space-ptb">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <div class="section-title">
+              <h2>Get In Touch</h2>
+              <!-- <p>If success is a process with a number of defined steps, then it is just like any other process. So, what is the first step in any process?</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-6">
+            <h4 class="mb-4">Contact the Publlic Relation Officer</h4>
+            <p class="mb-2" style="font-size:25px;">
+              <a href="tel:09050006638">
+                 <i style="font-size:30px;" class="bi bi-phone"></i> 
+                      09050006638
+              </a>
+            </p>
+            <p class="mb-2" style="font-size:25px;">
+              <a href="https://wa.me/09050006638">
+                <b class="text-dark"><i style="font-size:30px;" class="bi bi-whatsapp"></i></b>
+                   09050006638
+              </a>
+            </p>
+            <!-- <p class="mb-4"><b class="text-dark">Mail us:</b>  support@online-courses.com</p> -->
+            <!-- <div class="social-icon-round icon-sm">
+              <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              </ul>
+          </div> -->
+          
+        </div>
+        <div class="col-md-6 col-lg-6">
+          <h4 class="mb-4">Click the following to visit the page <i class="bi bi-arrow-down"></i></h4>
+          <p class="mb-2"><a href="#">Official instagram Page</a></p>
+          <p class="mb-2"><a href="#">Official Pans Uniben Whatsapp Tv</a></p>
+          <p class="mb-2"><b class="text-dark"><a href="#">Official Facebook Page</a></b></p>
+          <p class="mb-2"><b class="text-dark"><a href="#">Office</a></p>
+          <!-- <div class="social-icon-round icon-sm">
+            <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Contact Us -->
+
+
+    {% include 'footer.html' %}
+
+{% endblock %}

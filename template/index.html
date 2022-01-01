@@ -1,0 +1,303 @@
+{%  extends 'base.html' %}
+{% load static %}
+<title>{% block title %} Home | {% endblock %}</title>
+{% block content  %}
+
+
+{% include 'header.html' %}
+    <!--=================================
+    Banner -->
+
+    <div class="container newsletter-popup-container " id="newsletter-popup-form">
+	  	<div class="row justify-content-center">
+			<div class="col-10">
+				<div class="row no-gutters bg-white newsletter-popup-content">
+          {% for exam in exam %}
+            <div class="col-xl-3-5col col-lg-12 banner-content-wrap">
+              <div class="banner-content d-flex">
+                <div class="col-lg-6 ">
+                  <h4 class="">{{ exam.Title}}   Start</h4>
+                  <div  class="exam-date" id="exam-box">{{ exam.when|date:"M d, Y H:m:s" }}</div>
+                </div>
+                <div class="col-lg-6">
+                  <h4 class="">Time Left</h4> 
+                  <div  class="left-time exam-date text-dark"  id="countdown-box"></div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="close"></div>
+          {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div> 
+    <section class="slider-01">
+      <div class="container-fluid px-0">
+        <div id="main-slider" class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide slide-01 align-items-center d-flex bg-overlay-black-50 header-position"  
+              style="background-image: url(/static/images/slider/1.JPG); background-size: cover; background-position: center; background-repeat: no-repeat;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="banner-content">
+                      <div class="content text-center">
+                        <h1 class="animated text-white mb-3" data-swiper-animation="fadeInUp" data-duration="2.0s" data-delay="1.0s">Official Website For PANS, UNIBEN.</h1>
+                        <h6 class="animated text-white" data-swiper-animation="fadeInUp" data-duration="2.0s" data-delay="1.5s">
+                        Welcome to Pharmaceutical Association Of Nigerian Students, University Of Benin  
+                        </h6>
+                        <a class="btn btn-md btn-primary mt-4 animated" href="#" data-swiper-animation="fadeInUp" data-duration="2.0s" data-delay="2.0s">Ready to get started? </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slide-02 align-items-center d-flex bg-overlay-black-50"  
+              style="background-image: url(/static/images/slider/4.JPG); background-size: cover; background-position: center; background-repeat: no-repeat;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8 offset-md-2">
+                    <div class="banner-content">
+                      <div class="content text-center">
+                        <h1 class="animated text-white mb-3" data-swiper-animation="fadeInUp" data-duration="2.0s" data-delay="1.0s">
+                          Access Educational Materials
+                        </h1>
+                        <h6 class="animated text-white" data-swiper-animation="fadeInUp" data-duration="2.0s" data-delay="1.5s">
+                        Access materials in form of PDFs, videos, images, .docs for any level and courses.
+                        </h6>
+                        <a class="btn btn-md btn-primary mt-4 animated" href="#" data-swiper-animation="fadeInUp" data-duration="2.0s" data-delay="2.0s">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide slide-02 align-items-center d-flex bg-overlay-black-50"  
+              style="background-image: url(/static/images/slider/3.jpg); background-size: cover; background-position: center; background-repeat: no-repeat;">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-8 offset-md-2">
+                    <div class="banner-content">
+                      <div class="content text-center">
+                        <h1 class="animated text-white mb-3" data-swiper-animation="fadeInUp" data-duration="2.0s" data-delay="1.0s">
+                        Get Latest Update
+                        </h1>
+                        <h6 class="animated text-white" data-swiper-animation="fadeInUp" data-duration="2.0s" data-delay="1.5s">
+                        Get Latest Update of events happening in the faculty  
+                        </h6>
+                        <a class="btn btn-md btn-primary mt-4 animated" href="#" data-swiper-animation="fadeInUp" data-duration="2.0s" data-delay="2.0s">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pagination -->
+          <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></div>
+          <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"><i class="fas fa-chevron-right"></i></div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Banner -->
+
+    <!--=================================
+    info box -->
+    <section class="bg-primary">
+      <div class="container">
+        <div class="row feature-info-02">
+          <div class="col-sm-4 py-4 text-center">
+            <i class="flaticon-online-learning-1 fa-3x text-white"></i>
+            <h4 class="fw-5 mt-3 mb-0 text-white">100,000 online courses</h4>
+            <p class="mb-0 text-white">Focus is having the unwavering attention.</p>
+          </div>
+          <div class="col-sm-4 py-4 text-center">
+            <i class="flaticon-lock fa-3x text-white"></i>
+            <h4 class="fw-5 mt-3 mb-0 text-white">Lifetime entrance</h4>
+            <p class="mb-0 text-white">The best way is to develop and follow.</p>
+          </div>
+          <div class="col-sm-4 py-4 text-center">
+            <i class="flaticon-strategy fa-3x mt-2 text-white"></i>
+            <h4 class="fw-5 mt-3 mb-0 text-white">Live learning</h4>
+            <p class="mb-0 text-white">Start with your goals in mind and then work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    info box -->
+
+    <!--=================================
+    Education Categories -->
+    <section class="space-ptb">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="section-title text-center">
+              <h2>Choose your course & learning</h2>
+              <p>We know this in our gut, but what can we do about it? How can we motivate ourselves? One of the most difficult aspects of achieving success is staying motivated over the long haul.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {%  for cour in cours %}
+          <div class="col-md-3 col-sm-6">
+            <a href="">
+              <div class="categories">
+                <img class="img-fluid" style="width: 361px; height:249px" src="{{ cour.image.url  }}" alt="">
+                <h6 class="categories-title text-white"> {{ cour.name }}</h6>
+              </div>
+            </a>
+          </div>
+          {% endfor  %}
+           <div class="col-lg-12 col-md-6 text-center">
+               <div class="learn btn btn-primary">
+                 <a href="" class="font-weight-bold text-white" style="font-size: 20px;">Read More</a>
+               </div>
+           </div>
+        </div>
+      
+      </div>
+    </section>
+    <!--=================================
+    Education Categories -->
+
+
+
+<!--=================================
+    News Details -->
+    <section class="space-ptb course-details">
+      <div class="container">
+        <div class="row">
+          {% for inform in inform %}
+          <div class="col-lg-12 col-sm-6 mb-4 pb-2">
+            <div class="event">
+              <div class="event-img">
+              <div class="event-info text-center">
+                <ul class="meta-event">
+                  <li><i class="far fa-clock"></i>Information</li>
+                  <!-- <li><i class="fas fa-map-marker-alt"></i>472 Carpenter Rd.</li> -->
+                </ul>
+                <h6 class="event-title"><a href="#">  {{ inform.information_title }}  </a></h6>
+                <p>{{ inform.information_description }}</p>
+                <p>{{ inform.information_body|truncatechars:60 }}</p>
+                <a class="btn btn-link" href="{%  url 'index:information'  %}">know more</a>
+              </div>
+            </div>
+          </div>
+         {%  endfor  %}
+          
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    News Details -->
+
+
+<!--=================================    Testimonial and Brands -->
+<section class="space-ptb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-xl-5 align-self-center pl-0 pl-lg-5 mt-5 mt-lg-0">
+                <div class="pl-3 pl-lg-4">
+                  <div class="section-title">
+                    <h2 class="mb-4 mb-lg-5">Some  Excos</h2>
+                  </div>
+                </div>
+              </div>
+              
+          <div class="col-lg-6 col-xl-7 text-center">
+            
+            <div class="owl-carousel testimonial" data-nav-arrow="true" data-nav-dots="false" data-items="1" data-lg-items="1" data-md-items="1" data-sm-items="1" data-space="0" data-autoheight="true">
+              {%  for i in  excos %}
+            <div class="item">
+                <div class="video-image">
+                  <img class="img-fluid w-100"  src="{{ i.image.url }}" alt="">
+                  </div>
+                  <!-- <div class="testimonial-item">
+                    <div class="testimonial-content">
+                      <h6 class="text-dark">{{  i.name  }}</h6>
+                    </div>
+                    <div class="testimonial-author">
+                      <div class="testimonial-name">
+                        <p class="mb-0 text-primary font-weight-bold">{{  i.position  }}</p>
+                        <small class="font-weight-bold">{{  i.number  }}</small>
+                      </div>
+                    </div>
+                  </div> -->
+                  <a href="{%  url 'index:excos' %}" style="font: 800;">Know more</a>
+            
+            </div>
+            {%  endfor %}
+            </div>
+            
+          </div>
+              
+        </div>
+    </div>
+  </section>
+<!--=================================Testimonial and Brands -->
+
+          <!--=================================
+          News -->
+          
+          <section class="space-ptb">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-9 col-sm-10">
+                  <div class="section-title text-center">
+                    <h2>News, Tips & Articles</h2>
+                    <p>
+                      The best way is to develop and follow a plan. Start with your goals in mind and then work. 
+                      backwards to develop the plan. What steps are required to get you to the goals.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-12">
+                  <div class="owl-carousel " data-nav-dots="false" data-nav-arrow="false" data-nav-dots="false" data-nav-arrow="false" data-items="3" data-md-items="0" data-sm-items="2" data-xs-items="0" data-xx-items="0" data-space="0" data-autoheight="false">
+                    {% for blog in blog %}
+                    <div class="item">
+                      <div class="course m-2">
+                        <div class="course-img">
+                          <img class="img-fluid" style="width: 400px; height:300px" src="{{  blog.image.url }}" alt="">
+                          <!-- <a href="#" class="course-category"><i class="far fa-bookmark"></i>Development</a> -->
+                        </div>
+                        <div class="course-info">
+                          <div class="course-title">
+                            <a href="#">{{ blog.Description|truncatechars:30 }}</a>
+                          </div>
+                          <div class="course-instructor">by
+                            <a href="#">{{ blog.Authors  }}</a>
+                          </div>
+                          <div class="course-rate-price">
+                            <div class="rating">
+                              <a href="">Read More</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {%  endfor %}
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </section>
+          <!--=================================
+          News -->
+
+
+
+          
+
+
+          {% include 'footer.html' %}
+
+          {% endblock %}
+        

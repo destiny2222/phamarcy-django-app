@@ -1,0 +1,79 @@
+{%  extends 'base.html' %}
+{% load static %}
+<title>{% block title %} Course | {% endblock %}</title>
+{% block content  %}
+
+
+{% include 'header.html' %}
+
+    <!--=================================
+    Inner Header -->
+    <section class="inner-header bg-holder bg-overlay-black-90" style="background-image: url('');">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+            <h5 class="breadcrumb-title mb-0 text-white">{{  course.name }} </h5>
+          </div>
+          <div class="col-md-6">
+            <ol class="breadcrumb d-flex justify-content-center justify-content-md-end ml-auto">
+              <li class="breadcrumb-item"><a class="text-white" href="{%  url 'index:home'  %}"><i class="fas fa-home mr-1"></i>Home</a></li>
+              <li class="breadcrumb-item active"><span>Course</span></li>
+              <!-- <li class="breadcrumb-item active"><span>PMP Exam Prep Seminar - PMBOK Guide 6</span></li> -->
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Inner Header -->
+    
+    <!--=================================
+    Course Details -->
+    <section class="space-ptb course-details">
+      <div class="container">
+        <div class="row">
+          {%  for i in files  %}
+          <div class="col-md-6 col-lg-3 pt-5 pb-5 shadow p-3 m-4 bg-white rounded">
+            
+            <!-- <img class="img-fluid  mb-4" src="{{  i.image.url  }}" alt=""> -->
+            <h4 class="news-title mb-2">Name:  {{  i.name }}</h4>
+            <p class="news-title mb-2 mt-2">Course:  {{  i.course }}<p>
+            <p class="news-title mb-2 mt-2">Level:  {{  i.level  }}</p>
+            <div class="d-flex align-items-center">
+              <p class="text-warning mb-3 mt-3 mr-2">Description:  {{ i.description }}</p>
+              <!-- <ul class="list-unstyled d-flex mb-0 mr-2">
+                <li><i class="fas fa-star text-warning"></i></li>
+                <li><i class="fas fa-star text-warning"></i></li>
+                <li><i class="fas fa-star text-warning"></i></li>
+                <li><i class="fas fa-star-half-alt text-warning"></i></li>
+                <li><i class="far fa-star text-warning"></i></li>
+              </ul> -->
+            </div>
+            <div class="d-flex justify-content-around align-items-center pt-3 pb-3">
+              {% if i.video %}
+                <a href="{{  i.video }}">Video</a>
+              {% endif %} 
+              {% if i.pdf %}
+                <a href="{{ i.pdf }}">Pdf</a>
+              {% endif %}
+              {% if i.image %}
+                <a href="{{ i.image }}">Image</a>
+              {% endif %}
+            </div>
+            <div>
+              <!-- <b class="mr-2">Categories </b><a href="#">{{ i.category }}</a> -->
+            </div>
+
+             
+          </div>
+          {% endfor  %}
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Course Details -->
+
+
+          {% include 'footer.html' %}
+
+          {% endblock %}

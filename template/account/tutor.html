@@ -1,0 +1,73 @@
+{%  extends 'base.html' %}
+{% load static %}
+<title>{% block title %} Tutor  | {% endblock %}</title>
+{%   load crispy_forms_tags  %}
+{%  block content  %}
+{%  include 'header.html'  %}
+
+
+<!--=================================
+    Inner Header -->
+    <section class="inner-header bg-holder bg-overlay-black-90" >
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+              <h1 class="breadcrumb-title mb-0 text-white">Tutor</h1>
+            </div>
+            <div class="col-md-6">
+              <ol class="breadcrumb d-flex justify-content-center justify-content-md-end ml-auto">
+                <li class="breadcrumb-item"><a href="{%  url 'index:home'  %}"><i class="fas fa-home mr-1"></i>Home</a></li>
+                <li class="breadcrumb-item active"><span>Tutor</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--=================================
+      Inner Header -->
+
+
+
+<!-- {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %} -->
+
+<div class="container pt-4 pb-4">
+            {%  for message in messages %}
+              <div  class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ message }}
+              </div>
+             {% endfor %} 
+        <h3>Submit Your feedback</h3>       
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-6">
+                {{  form.name|as_crispy_field }}
+            </div>
+            <div class="col-6">
+                {{  form.course|as_crispy_field }}
+            </div>
+            <div class="col-6">
+                {{  form.topic|as_crispy_field }}
+            </div>
+            <div class="col-6">
+                {{  form.note|as_crispy_field }}
+            </div>
+            <div class="col-sm-12 mb-3">
+                <input type="submit" class="btn btn-success" value="Submit">
+            </div> 
+        </div>
+                
+        
+    </form>
+</div>
+
+{%  include 'footer.html'  %}
+
+{%  endblock %}

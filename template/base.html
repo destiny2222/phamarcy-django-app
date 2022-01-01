@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Guruma - Online Course & Education HTML Template" />
+    <meta name="author" content="potenzaglobalsolutions.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}  | {% endblock %}Phamarcy</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <!-- CSS Global Compulsory (Do not remove)-->
+    <link rel="stylesheet" href="{% static 'css/font-awesome/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/flaticon/flaticon.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}" />
+
+    <!-- Page CSS Implementing Plugins (Remove the plugin CSS here if site does not use that feature) -->
+    <link rel="stylesheet" href="{% static 'css/select2/select2.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons/bootstrap-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl-carousel/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/animate/animate.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/swiper/swiper.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/magnific-popup/magnific-popup.css' %}" />
+
+    <!-- Template Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+   
+  </head>
+  <body>
+    <div class="container newsletter-popup-container " id="newsletter-popup-form">
+	  	<div class="row justify-content-center">
+			<div class="col-10">
+				<div class="row no-gutters bg-white newsletter-popup-content">
+          {% for exam in exam %}
+            <div class="col-xl-3-5col col-lg-12 banner-content-wrap">
+              <div class="banner-content d-flex">
+                <div class="col-lg-6 ">
+                  <h4 class="">{{ exam.Title}}   Start</h4>
+                  <div  class="exam-date" id="exam-box">{{ exam.when|date:"M d, Y H:m:s" }}</div>
+                </div>
+                <div class="col-lg-6">
+                  <h4 class="">Time Left</h4> 
+                  <div  class="left-time exam-date text-dark"  id="countdown-box"></div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="close"></div>
+          {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div> 
+       {% block content  %}
+
+
+       {% endblock   %}
+
+   
+
+
+
+
+            <!--=================================
+          Javascript -->
+
+          <!-- JS Global Compulsory (Do not remove)-->
+          <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+          <script src="{% static 'js/popper/popper.min.js' %}"></script>
+          <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+
+          <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+          <script src="{% static 'js/select2/select2.full.js' %}"></script>
+          <script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>
+          <script src="{% static 'js/swiper/swiper.min.js' %}"></script>
+          <script src="{% static 'js/swiperanimation/SwiperAnimation.min.js' %}"></script>
+          <script src="{% static 'js/shuffle/shuffle.min.js' %}"></script>
+          <script src="{% static 'js/jarallax/jarallax.min.js' %}"></script>
+          <script src="{% static 'js/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+          <!-- Template Scripts (Do not remove)-->
+          <script src="{% static 'js/custom.js' %}"></script>
+          <script src="{% static 'js/script.js' %}"></script>
+          <!-- <script src="{% static 'js/script.js' %}"></script> -->
+
+         
+                 <script src="{%  static 'js/main.js' %}" defer></script>
+         
+          
+    </body>
+</html>

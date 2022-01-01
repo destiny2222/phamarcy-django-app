@@ -1,0 +1,63 @@
+{%  extends 'base.html' %}
+{% load static %}
+<title>{% block title %} Study | {% endblock %}</title>
+{% block content  %}
+
+
+{% include 'header.html' %}
+<!--=================================
+    Inner Header -->
+    <section class="inner-header bg-holder bg-overlay-black-90" style="background-image: url('http://mymtn.com.ng/oops');">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-8 text-center text-md-left mb-2 mb-md-0">
+              <h1 class="breadcrumb-title mb-0 text-white">Study</h1>
+            </div>
+            <div class="col-md-4">
+              <ol class="breadcrumb d-flex justify-content-center justify-content-md-end ml-auto">
+                <li class="breadcrumb-item"><a class="text-white" href="{%  url 'index:home'  %}"><i class="fas fa-home mr-1"></i>Home</a></li>
+                <li class="breadcrumb-item active"><span>Study</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--=================================
+      Inner Header -->
+      
+
+      
+      <!--=================================
+      Terms-and-conditions -->
+      <section class="space-ptb">
+        <div class="container">
+          <div class="row">
+              {%  for i in  semest %}
+            <div class="col-lg-4 col-md-6">
+              <h2 class="mt-4">{{  i.semester  }}</h2>
+              <!-- <h6 class="mt-4">{{ i.AEB  }}</h6> -->
+              <ul class="list">
+                {%  for cos in  course %}
+                <li class="mb-2"><i class="far fa-circle"></i>
+                  <a href="{% url 'index:studdetails' i.id %}">{{  cos.name  }}</a></li>
+                <li class="mb-2"><i class="far fa-circle"></i><a href="#">
+                  {{ cos.description|truncatechars:50 }}</a></li>
+                {%  endfor  %}
+              </ul>
+              
+            </div>
+            {%  endfor  %}
+          </div>
+          
+          <div class="row">
+              
+          </div>
+        </div>
+      </section>
+      <!--=================================
+      Terms-and-conditions -->
+
+
+      {% include 'footer.html' %}
+
+{% endblock %}

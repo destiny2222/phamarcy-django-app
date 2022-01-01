@@ -1,0 +1,139 @@
+{%  extends 'dashboard/base.html' %}
+{%  load static %}
+{%  block body  %}
+
+{%  include 'dashboard/header.html'  %}
+	<!-- start page container -->
+	<div class="page-container">
+		<!-- start sidebar menu -->
+		{%  include 'dashboard/sidebar.html' %}
+		<!-- end sidebar menu -->
+		<!-- start page content -->
+		<div class="page-content-wrapper">
+			<div class="page-content">
+				<div class="page-bar">
+					<div class="page-title-breadcrumb">
+						<div class=" pull-left">
+							<div class="page-title">Edit Profile</div>
+						</div>
+						<ol class="breadcrumb page-breadcrumb pull-right">
+							<li><i class="fa fa-home"></i>&nbsp;<a class="parent-item"
+									href="{%  url 'index:dashboard'  %}">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+							</li>
+							<li><a class="parent-item" href="{%  url 'index:dashboard'  %}">profile</a>&nbsp;<i class="fa fa-angle-right"></i>
+							</li>
+							<li class="active">Edit profile</li>
+						</ol>
+					</div>
+					
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="card-box">
+							<div class="card-head">
+								<header>Basic Information</header>
+							</div>
+							<div class="card-body row">
+								{%  for message in messages %}
+								<div  class="alert alert-warning alert-dismissible fade show" role="alert">
+									{{ message }}
+								</div>
+								{% endfor %}
+								<form action="" method="POST" enctype="multipart/form-data">
+									{% csrf_token %}
+									<div class="col-lg-12 p-t-20">
+										<div
+											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+											<input class="mdl-textfield__input" type="text" value="{{ user.fullname }}"
+												name="fullname">
+											<label class="mdl-textfield__label">Full Name</label>
+										</div>
+									</div>
+									<div class="col-lg-12 p-t-20">
+										<div
+											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+											<input class="mdl-textfield__input" type="text" value="{{ user.username }}"
+												name="username">
+											<label class="mdl-textfield__label">Username</label>
+										</div>
+									</div>
+									<div class="col-lg-12 p-t-20">
+										<div
+											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+											<input class="mdl-textfield__input" type="email"value="{{ user.email }}"
+												name="email">
+											<label class="mdl-textfield__label">Email</label>
+											<span class="mdl-textfield__error">Enter Valid Email Address!</span>
+										</div>
+									</div>									
+									<div class="col-lg-12 p-t-20">
+											<div
+												class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+												<input class="mdl-textfield__input" type="text" value="{{ user.gender }}" name="gender">
+												<label class="mdl-textfield__label">Gender</label>
+											</div>
+										
+
+									</div>
+									<div class="col-lg-12 p-t-20">
+										<div
+											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+											<input class="mdl-textfield__input" type="text" value="{{ user.number }}"
+												pattern="-?[0-9]*(\.[0-9]+)?" name="number">
+											<label class="mdl-textfield__label" for="">Mobile Number</label>
+											<!-- <span class="mdl-textfield__error">Number required!</span> -->
+										</div>
+									</div>
+									<div class="col-lg-12 p-t-20">
+										<div
+											class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
+											<input class="mdl-textfield__input" type="text" 
+											value="{{ user.level }}" name="level"
+												>
+											<label class="mdl-textfield__label">Level</label>
+										</div>
+									</div>
+									
+									<div class="col-lg-12 p-t-20">
+										<div class="mdl-textfield mdl-js-textfield txt-full-width">
+											<textarea class="mdl-textfield__input" rows="4"
+												name="description" >{{  user.description }}</textarea>
+											<label class="mdl-textfield__label" for="text7">Description</label>
+										</div>
+									</div>
+									<div class="col-lg-12 p-t-20">
+										<div class="mdl-textfield mdl-js-textfield txt-full-width">
+											<textarea class="mdl-textfield__input" rows="4"
+												name="about" >{{  user.about }}</textarea>
+											<label class="mdl-textfield__label" for="text7">About Me</label>
+										</div>
+									</div>
+									<div class="col-lg-12 p-t-20">
+										<label class="control-label col-md-3">Upload Photo</label>
+										
+										<div class="col-md-12">
+											<input type="file" name="photo" id="">
+										</div>
+									</div>
+									<div class="col-lg-12 p-t-20 text-center">
+										<input type="submit"
+											class="mdl-button mdl-js-button 
+											mdl-button--raised mdl-js-ripple-effect
+												m-b-10 m-r-20 btn-pink" value="submit">
+										<input type="submit"
+											class="mdl-button mdl-js-button 
+											mdl-button--raised mdl-js-ripple-effect m-b-10 btn-default" value="Cancel">										</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end page content -->
+		
+	</div>
+	<!-- end page container -->
+
+		
+{%  endblock %}

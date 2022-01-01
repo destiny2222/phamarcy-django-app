@@ -1,0 +1,74 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta name="description" content="Responsive Admin Template" />
+	<meta name="author" content="SmartUniversity" />
+	<title>Phamarcy</title>
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+	<!-- icons -->
+	<link href="{% static 'assets/fonts/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'assets/fonts/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'assets/fonts/material-design-icons/material-icon.css' %}" rel="stylesheet" type="text/css" />
+	<!--bootstrap -->
+	<link href="{% static  'assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static  'assets/plugins/summernote/summernote.css' %}" rel="stylesheet">
+	<!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="{% static  'assets/plugins/material/material.min.css' %}">
+	<link rel="stylesheet" href="{% static  'assets/css/material_style.css' %}">
+	<!-- inbox style -->
+	<link href="{% static  'assets/css/pages/inbox.min.css' %}" rel="stylesheet" type="text/css" />
+	<!-- Theme Styles -->
+	<link href="{% static  'assets/css/theme/dark/theme_style.css' %}" rel="stylesheet" id="rt_style_components" type="text/css" />
+	<link href="{% static  'assets/css/plugins.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static  'assets/css/theme/dark/style.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static  'assets/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static  'assets/css/theme/dark/theme-color.css' %}" rel="stylesheet" type="text/css" />
+	<!-- favicon -->
+	<link rel="shortcut icon" href="" />
+</head>
+<!-- END HEAD -->
+
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-dark dark-sidebar-color logo-dark dark-theme">
+
+	<div class="page-wrapper">
+
+        {%  block body  %}
+
+        {%  endblock  %}
+
+</div>
+<!-- start js include path -->
+<script data-cfasync="false" src="../../../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="{% static  'assets/plugins/jquery/jquery.min.js' %}"></script>
+<script src="{% static  'assets/plugins/popper/popper.js' %}"></script>
+<script src="{% static  'assets/plugins/jquery-blockui/jquery.blockui.min.js' %}"></script>
+<script src="{% static  'assets/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+<!-- bootstrap -->
+<script src="{% static  'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static  'assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+<script src="{% static  'assets/plugins/sparkline/jquery.sparkline.js' %}"></script>
+<script src="{% static  'assets/js/pages/sparkline/sparkline-data.js' %}"></script>
+<!-- Common js-->
+<script src="{% static  'assets/js/app.js' %}"></script>
+<script src="{% static  'assets/js/layout.js' %}"></script>
+<script src="{% static  'assets/js/theme-color.js' %}"></script>
+<!-- material -->
+<script src="{% static  'assets/plugins/material/material.min.js' %}"></script>
+<!--apex chart-->
+<script src="{% static  'assets/plugins/apexcharts/apexcharts.min.js' %}"></script>
+<script src="{% static  'assets/js/pages/chart/chartjs/home-data.js' %}"></script>
+<!-- summernote -->
+<script src="{% static  'assets/plugins/summernote/summernote.js' %}"></script>
+<script src="{% static  'assets/js/pages/summernote/summernote-data.js' %}"></script>
+<!-- end js include path -->
+</body>
+
+
+</html>

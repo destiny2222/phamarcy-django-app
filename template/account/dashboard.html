@@ -1,0 +1,98 @@
+{%  extends 'base.html' %}
+{% load static %}
+<title>{% block title %} Find a Reading Buddy | {% endblock %}</title>
+{%  block content  %}
+{%  include 'header.html'  %}
+
+<!--=================================
+    Inner Header -->
+    <section class="inner-header bg-holder bg-overlay-black-80" style="background-image: url('');">
+		<div class="container">
+		  <div class="row align-items-center mb-5 pb-sm-5 pb-0">
+			<div class="col-md-12 text-center mb-2 mb-md-0">
+			  <h1 class="mb-0 text-white display-1 fw-5"></h1>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	  <!--=================================
+	  Inner Header -->
+    <!--=================================
+    Feature Info -->
+    <!-- <section class="mt-n5 e-mt-sm-n4 e-mt-md-n5 e-mt-lg-n6 position-relative z-index-1">
+      <div class="container">
+        <div class="find-Course box-shadow rounded-sm p-4 bg-white">
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Search Events</h3>
+            </div>
+          </div>
+          <form>
+            <div class="form-row form-flat-style align-items-center">
+              <div class="col-md-4 col-lg-3 mb-3 mb-md-0">
+                <label class="lead fw-5">Search events</label>
+                <input type="text" class="form-control" placeholder="Events">
+              </div>
+              <div class="col-md-4 col-lg-3 mb-3 mb-md-0">
+                <label class="lead fw-5">Event date</label>
+                <div class="input-group date" id="datetimepicker-01" data-target-input="nearest">
+                  <input type="text" class="form-control datetimepicker-input" placeholder="Date" data-target="#datetimepicker-01">
+                  <div class="input-group-append" data-target="#datetimepicker-01" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 col-lg-3">
+                <label class="lead fw-5">Event location</label>
+                <input type="text" class="form-control" placeholder="Location">
+              </div>
+              <div class="col-12 col-lg-3 text-left mt-3 mt-lg-0">
+                <label class="lead fw-5"></label>
+                <a class="btn btn-primary d-lg-block" href="#">Search events</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section> -->
+    <!--=================================
+    Feature Info -->
+    
+    <!--=================================
+    News Details -->
+    <section class="space-ptb course-details">
+      <div class="container">
+        <div class="row">
+          
+          {% for  i in student  %}
+          <div class="col-lg-4 col-sm-6 mb-4 pb-2">
+            <div class="event">
+              <div class="event-img">
+                <img class="img-fluid rounded" style="max-width:70%;" src="" alt="">
+                <!-- <div class="event-date">
+                  18
+                  <small>Jan</small>
+                  <span class="years">2021</span>
+                </div> -->
+              </div>
+              <div class="event-info">
+                <ul class="meta-event">
+                  <li><i class="far fa-envelope"></i>{{  i.email }}</li>
+                  <li><i class="fas fa-phone-alt">{{  i.number  }}</i></li>
+                </ul>
+                <h6 class="event-title"><a href="#">{{  i.first_name  }}</a></h6>
+                <p>{{  i.description }}</p>
+                <a class="btn btn-link" href="#">Edit Profile</a>
+              </div>
+            </div>
+          </div>
+		      {%  endfor %}
+
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    News Details -->
+	{% include 'footer.html'  %}
+
+    {%  endblock  %}

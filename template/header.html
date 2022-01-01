@@ -1,0 +1,136 @@
+{% load static %}
+<!--=================================
+  Header -->
+  <header class="header header-sticky  header-sticky">
+      <nav class="navbar navbar-static-top navbar-expand-lg px-3 px-md-5">
+        <div class="container-fluid position-relative px-0">
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="fas fa-align-left"></i></button>
+          <a class="navbar-brand" href="{% url 'index:home' %}">
+            <img class="img-fluid" src="{% static 'images/logo/logo.PNG' %}" alt="logo">
+          </a>
+          
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+           
+              <li class=" {% if request.path == '/' %}activenav{% endif %} ">
+                <a class="nav-link px-2" href="{% url 'index:home' %}">Home</a>
+              </li>
+              <li class="{% if request.path == '/about/' %}activenav{% endif %} ">
+                  <a class="nav-link px-2" href="{% url 'index:about' %}">About</a>
+                </li>
+              <li class="dropdown nav-item">
+                <a class="nav-link px-2 {% if request.path == '/course/' %}activenav{% endif %}" href="javascript:void(0)" data-toggle="dropdown">Academics 
+                    <i class="fas fa-chevron-down fa-xs"></i>
+                </a>
+                
+                <ul class="dropdown-menu megamenu ">
+                  <div class="row no-gutters">
+                    <div class="col-sm-6 col-md-12">
+                      <!-- <h6 class="nav-title">Basic Pages</h6> -->
+                      <ul class="list-unstyled mt-lg-1">
+                        <li class="{% if request.path == '/textbook/' %}activenav{% endif %} ">
+                          <a class="nav-link px-2 pt-4" href="{%  url 'index:textbook'  %}">Pharmacy Textbook</a>
+                        </li>
+                      </ul>
+                    </div>
+                    {% for i in sch_level %}
+                    <div class="col-sm-6 col-md-4">
+                      
+                      <h6 class="nav-title">{{ i.level }}</h6>    
+                      
+                      <ul class="list-unstyled mt-lg-1">
+                        <li><a class="dropdown-item" href="{%  url 'index:study' i.id  %}"><span>{{ i.article  }}</span></a></li>
+                        <li><a class="dropdown-item" style="font-size: 11px;" href="{%  url 'index:login'  %}"><span>{{ i.article2  }}</span></a></li>
+                        <li><a class="dropdown-item" href="{%  url 'index:tutor'  %}"><span>{{ i.article3  }}</span></a></li>
+                      </ul>
+                    </div>
+                    {%  endfor %}
+                  </div>
+                    
+                  
+                </ul>
+                
+              </li>
+              <li class="dropdown nav-item">
+                
+                <a class="nav-link px-2 {% if request.path == '/course/' %}activenav{% endif %}" 
+                href="javascript:void(0)" data-toggle="dropdown">Pans Activities<i class="fas fa-chevron-down fa-xs"></i></a>
+                <ul class="dropdown-menu megamenu ">
+                  <ul class="list-unstyled mt-lg-1">
+                    {%  for i in pens  %}
+                            <li class="dropdown-item">
+                              <a href="{% url 'index:pendetails' i.id  %}"><span>{{ i.title }}</span></a>
+                            </li>
+                         {%  endfor %}
+                    <li class="{% if request.path == '/pens/' %}activenav{% endif %}">
+                      <a class="dropdown-item" href="{% url 'index:pen'  %}">
+                        <span>Pay of Pans Dues</span>
+                      </a>
+                    </li>
+                    <li class="{% if request.path == '/pens/' %}activenav{% endif %}">
+                      <a class="dropdown-item" href="{% url 'index:pen'  %}">
+                        <span>Pans IDE CARD</span>
+                      </a>
+                    </li>
+                    <li class="{% if request.path == '/excos/' %}activenav{% endif %}">
+                      <a class="dropdown-item" href="{% url 'index:excos'  %}">
+                        <span>Excos</span>
+                      </a>
+                    </li>
+                    <li class="{% if request.path == '/information/' %}activenav{% endif %}">
+                      <a class="dropdown-item" href="{% url 'index:information' %}">
+                        <span>Information</span>
+                      </a>
+                    </li>
+                    <li class="{% if request.path == '/accommodation/' %}activenav{% endif %}">
+                      <a class="dropdown-item" href="{% url 'index:accommodation'  %}">
+                        <span>Accommodation</span>
+                      </a>
+                    </li>
+                  </ul>
+                </ul>
+                
+              </li>
+              <!-- <li class="">
+                <a href="" class="nav-link">Excos</a>
+              </li> -->
+              <li class="{% if request.path == '/blog/' %}activenav{% endif %}">
+                <a class="nav-link px-2" href="{% url 'index:blog' %}">Blog</a>
+              </li>
+              <li class="{% if request.path == '/shop/' %}activenav{% endif %}">
+                <a class="nav-link px-2" href="{% url 'index:shop' %}">Shop</a>
+              </li>
+              <li class="{% if request.path == '/contact/' %}activenav{% endif %}">
+                <a class="nav-link px-2" href="{% url 'index:contact' %}">Contact us</a>
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="search-category ">
+              <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" name="searched" class="form-control" placeholder="Search Courses...">
+                <button class="search-button" value="Search" type="submit"> <i class="fa fa-search"></i></button>
+              </form>
+          </div> -->
+          
+          <div class="woo-action d-lg-none d-none">
+            {% for exam in exam %}
+                    <div class="">
+                      <!-- <i class="flaticon-book fa-4x text-dark mr-4"></i> -->
+                      <h3 class="mb-0 mt-0 text-dark" >{{ exam.Title}}   Start</h3>
+                    </div>
+                    <p class=" text-dark " id="exam-box">{{ exam.when|date:"M d, Y H:m:s" }}</p>
+                    <div class="">
+                      <h4 class="mb-0 mt-0 text-dark">Time Left</h4>
+                      <div id="countdown-box" class=" mb-0 mt-0 text-dark"></div>
+                    </div>
+                  </div>
+                {% endfor %}
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--=================================
+    Header -->
+    

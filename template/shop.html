@@ -1,0 +1,90 @@
+{%  extends 'base.html' %}
+{% load static %}
+<title>{% block title %} Shop | {% endblock %}</title>
+{% block content  %}
+
+
+{% include 'header.html' %}
+    <!--=================================
+    Inner Header -->
+    <section class="inner-header bg-holder bg-overlay-black-90" style="background-image: url('http://mymtn.com.ng/oops');">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+            <h1 class="breadcrumb-title mb-0 text-white">Shop</h1>
+          </div>
+          <div class="col-md-6">
+            <ol class="breadcrumb d-flex justify-content-center justify-content-md-end ml-auto">
+              <li class="breadcrumb-item"><a class="text-white" href="{% url 'index:home' %}"><i class="fas fa-home mr-1"></i>Home</a></li>
+              <li class="breadcrumb-item active"><span>Shop</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Inner Header -->
+
+    <!--=================================
+    Product -->
+    <section class="space-ptb">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-xl-4 order-2 order-md-1 mt-5 mt-md-0">
+            <div class="shop-sidebar">
+              <div class="widgets">
+                <div class="widget">
+                  <h6 class="widget-title">Pharmapreneurs Corner  Category</h6>
+                  <ul>
+                     {%  for i in menu_shop  %}
+                        <li><a href="{% url 'index:shopcategory' i.id  %}">{{ i.name }}</a></li>
+                     {%  endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+         
+          <div class="col-lg-12 col-md-7  order-1 order-md-1">
+            <h6 class="mb-4">Product </h6>
+            <div class="row">
+              {% for product in sale %}
+              <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                <div class="product shadow p-3 mb-5 bg-white">
+                  <div class="product-image ">
+                    <img class="img-fluid mx-auto" style="width: 200px; height:200px;" src="{{  product.image.url  }}" alt="Responsive image">
+                  </div>
+                  <div class="product-description ">
+                    <div class="product-title">
+                      <a href="#">{{  product.title  }}</a>
+                    </div>
+                    <div class="product-title">
+                      <p>{{  product.description  }}</p>
+                    </div>
+                    <div class="product-price">
+                      
+                      <del>{{  product.discount_price  }}</del> <ins>₦{{  product.price  }}</ins>
+                      
+                    </div>
+                    <div class="product-rating">
+                      <h6>Call or whatsapp for purchase</h6>
+                      <a href="tel:09061841668">Call :<i style="font-size: 20px;" class="bi bi-phone"></i>09061841668</a>
+                      <a href="https://wa.me/09061841668"><i style="font-size: 20px;" class="bi bi-whatsapp"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor  %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=================================
+    Product -->
+
+
+    {% include 'footer.html' %}
+
+    {% endblock %}
